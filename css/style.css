@@ -26,6 +26,7 @@ body {
 }
 
 .title {
+  position: relative;
   font-family: var(--font-roboto);
   font-size: 48px;
   line-height: 0.66;
@@ -195,7 +196,6 @@ body {
   display: block;
   font-family: var(--font-roboto);
   font-weight: 300;
-  width: 395px;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -295,21 +295,20 @@ body {
 .collection,
 .gallery,
 .blog {
-  position: relative;
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
-.collection::after,
-.gallery::after,
-.blog::after {
+.collection .title::after,
+.gallery .title::after,
+.blog .title::after {
   display: block;
   position: absolute;
   content: '';
   height: 15px;
   width: 160px;
   background-image: url('../images/TITLE\ BORDER.png');
-  top: 160px;
+  top: 62px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -495,20 +494,19 @@ body {
 
 /* FOOTER */
 .footer {
-  position: relative;
   background-color: #4ec6ab;
   background-image: url('../images/bg_footer.png');
   padding-top: 100px;
   padding-bottom: 135px;
 }
-.footer::after {
+.footer .title::after {
   display: block;
   position: absolute;
   content: '';
   height: 15px;
   width: 160px;
   background-image: url('../images/TITLE\ BORDER\ footer.png');
-  top: 160px;
+  top: 62px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -532,25 +530,37 @@ body {
   align-items: center;
 }
 
+.label-email {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .footer .email {
   height: 60px;
-  width: 445px;
+  width: 540px;
   padding: 24px;
   font-size: 16px;
   line-height: 1 625;
   font-weight: 300;
   border-radius: 5px;
+  border: none;
 }
 
 .submit {
-  display: inline-flex;
+  position: absolute;
+  right: 1px;
   height: 56px;
   width: 90px;
-  padding: 0;
   background-color: #4ec6ab;
   background-image: url('../images/footer.png');
   background-position: center center;
   background-repeat: no-repeat;
   border-radius: 0 5px 5px 0;
-  border: 2px solid #fff;
+  border: none;
+}
+
+.submit:hover {
+  background-color: #7ed9c7;
 }
